@@ -1,6 +1,21 @@
 # CRM_Backend
 ## Project Specifications
 
+### Usage
+1. Installation:
+    - Clone the repository
+    - Run `go get` to install dependencies
+    - Run `go run main.go` to start the server
+    - Navigate to `localhost:3000` in your browser
+    - Use the API endpoints to interact with the database
+2. API Endpoints:
+    - `/` - Home route
+    - `/customers` - Get all customers
+    - `/customers/{id}` - Get a single customer
+    - `/customers` - Add a customer
+    - `/customers/{id}` - Update a customer
+    - `/customers/{id}` - Delete a customer
+
 ### Data
 1. Customer struct with the following fields:
     - ID
