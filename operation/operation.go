@@ -55,7 +55,6 @@ func AddCustomer(w http.ResponseWriter, r *http.Request) {
 func UpdateCustomer(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	//var newEntry *cs.Customer
 	newEntry := new(cs.Customer)
 
 	reqBody, _ := ioutil.ReadAll(r.Body)

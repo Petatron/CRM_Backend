@@ -1,6 +1,8 @@
 package main
 
 import (
+	cs "CRM_backend/customer"
+	op "CRM_backend/operation"
 	"fmt"
 	"github.com/gorilla/mux"
 	"log"
@@ -48,6 +50,11 @@ var customers = map[string]string{
 }
 
 func main() {
+	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", "S", true)
+	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", "S", true)
+	op.Customers[ca.ID] = *ca
+	op.Customers[cb.ID] = *cb
+
 	fileServer := http.FileServer(http.Dir("./static"))
 
 	router := mux.NewRouter().StrictSlash(true)
