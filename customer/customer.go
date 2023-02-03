@@ -5,12 +5,12 @@ type Customer struct {
 	Name      string `json:"name"`
 	Role      string `json:"role"`
 	Email     string `json:"email"`
-	Phone     string `json:"phone"`
+	Phone     int    `json:"phone"`
 	Contacted bool   `json:"contacted"`
 }
 
 // CreateCustomer creates a new customer
-func CreateCustomer(ID, Name, Role, Email, Phone string, Contacted bool) (result *Customer) {
+func CreateCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) (result *Customer) {
 	customer := Customer{
 		ID:        ID,
 		Name:      Name,
@@ -24,7 +24,7 @@ func CreateCustomer(ID, Name, Role, Email, Phone string, Contacted bool) (result
 }
 
 // ModifyCustomer modifies an existing customer
-func (c *Customer) ModifyCustomer(ID, Name, Role, Email, Phone string, Contacted bool) {
+func (c *Customer) ModifyCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) {
 	c.ID = ID
 	c.Name = Name
 	c.Role = Role

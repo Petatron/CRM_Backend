@@ -4,9 +4,10 @@ import (
 	cs "CRM_backend/customer"
 	op "CRM_backend/operation"
 	"fmt"
-	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Customer struct {
@@ -14,12 +15,12 @@ type Customer struct {
 	Name      string `json:"name"`
 	Role      string `json:"role"`
 	Email     string `json:"email"`
-	Phone     string `json:"phone"`
+	Phone     int    `json:"phone"`
 	Contacted bool   `json:"contacted"`
 }
 
 // createCustomer creates a new customer
-func createCustomer(ID, Name, Role, Email, Phone string, Contacted bool) (result *Customer) {
+func createCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) (result *Customer) {
 	customer := Customer{
 		ID:        ID,
 		Name:      Name,
@@ -33,7 +34,7 @@ func createCustomer(ID, Name, Role, Email, Phone string, Contacted bool) (result
 }
 
 // modifyCustomer modifies an existing customer
-func (c *Customer) modifyCustomer(ID, Name, Role, Email, Phone string, Contacted bool) {
+func (c *Customer) modifyCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) {
 	c.ID = ID
 	c.Name = Name
 	c.Role = Role
@@ -42,16 +43,9 @@ func (c *Customer) modifyCustomer(ID, Name, Role, Email, Phone string, Contacted
 	c.Contacted = Contacted
 }
 
-var customers = map[string]string{
-	"1": "Andy",
-	"2": "Peter",
-	"3": "Gabriella",
-	"4": "Jordy",
-}
-
 func main() {
-	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", "S", true)
-	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", "S", true)
+	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", 320, true)
+	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", 408, true)
 	op.Customers[ca.ID] = *ca
 	op.Customers[cb.ID] = *cb
 
