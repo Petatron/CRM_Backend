@@ -43,13 +43,6 @@ func (c *Customer) modifyCustomer(ID, Name, Role, Email string, Phone int, Conta
 	c.Contacted = Contacted
 }
 
-var customers = map[string]string{
-	"1": "Andy",
-	"2": "Peter",
-	"3": "Gabriella",
-	"4": "Jordy",
-}
-
 func main() {
 	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", 320, true)
 	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", 408, true)
