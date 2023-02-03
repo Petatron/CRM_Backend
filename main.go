@@ -4,9 +4,10 @@ import (
 	cs "CRM_backend/customer"
 	op "CRM_backend/operation"
 	"fmt"
-	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Customer struct {
@@ -14,12 +15,12 @@ type Customer struct {
 	Name      string `json:"name"`
 	Role      string `json:"role"`
 	Email     string `json:"email"`
-	Phone     int32 `json:"phone"`
+	Phone     int    `json:"phone"`
 	Contacted bool   `json:"contacted"`
 }
 
 // createCustomer creates a new customer
-func createCustomer(ID, Name, Role, Email string, Phone int32, Contacted bool) (result *Customer) {
+func createCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) (result *Customer) {
 	customer := Customer{
 		ID:        ID,
 		Name:      Name,
@@ -33,7 +34,7 @@ func createCustomer(ID, Name, Role, Email string, Phone int32, Contacted bool) (
 }
 
 // modifyCustomer modifies an existing customer
-func (c *Customer) modifyCustomer(ID, Name, Role, Email, Phone string, Contacted bool) {
+func (c *Customer) modifyCustomer(ID, Name, Role, Email string, Phone int, Contacted bool) {
 	c.ID = ID
 	c.Name = Name
 	c.Role = Role
