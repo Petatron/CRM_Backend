@@ -14,12 +14,12 @@ type Customer struct {
 	Name      string `json:"name"`
 	Role      string `json:"role"`
 	Email     string `json:"email"`
-	Phone     string `json:"phone"`
+	Phone     int32 `json:"phone"`
 	Contacted bool   `json:"contacted"`
 }
 
 // createCustomer creates a new customer
-func createCustomer(ID, Name, Role, Email, Phone string, Contacted bool) (result *Customer) {
+func createCustomer(ID, Name, Role, Email string, Phone int32, Contacted bool) (result *Customer) {
 	customer := Customer{
 		ID:        ID,
 		Name:      Name,
@@ -50,8 +50,8 @@ var customers = map[string]string{
 }
 
 func main() {
-	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", "S", true)
-	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", "S", true)
+	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", 320, true)
+	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", 408, true)
 	op.Customers[ca.ID] = *ca
 	op.Customers[cb.ID] = *cb
 
