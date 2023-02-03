@@ -53,6 +53,11 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 
+	router.HandleFunc("/customers", op.GetCustomers).Methods("GET")
+	router.HandleFunc("/customers/{id}", op.GetCustomer).Methods("GET")
+	router.HandleFunc("/customers", op.AddCustomer).Methods("POST")
+	router.HandleFunc("/customers/{id}", op.UpdateCustomer).Methods("PUT")
+	router.HandleFunc("/customers/{id}", op.DeleteCustomer).Methods("DELETE")
 	router.Handle("/", fileServer)
 
 	fmt.Println("Server is starting on port 3000. You can access it on http://localhost:3000")
