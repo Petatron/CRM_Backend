@@ -4,10 +4,9 @@ import (
 	cs "CRM_backend/customer"
 	op "CRM_backend/operation"
 	"fmt"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-
-	"github.com/gorilla/mux"
 )
 
 type Customer struct {
