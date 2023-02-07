@@ -69,8 +69,9 @@
 
 ### Future Improvements
 1. Create an additional endpoint that updates customer values in a batch (i.e., rather than for a single customer).
-2. Upgrade the mock database to a real database (e.g., PostgreSQL).
-3. Deploy the API to the web.
+2. Make Customers data private
+3. Upgrade the mock database to a real database (e.g., PostgreSQL).
+4. Deploy the API to the web.
 
 
 
