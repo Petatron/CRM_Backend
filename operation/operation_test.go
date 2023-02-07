@@ -1,7 +1,9 @@
 package operation
 
 import (
-	cs "CRM_backend/customer"
+	"fmt"
+	"net/http"
+	"net/http/httptest"
 	"testing"
 
 	. "github.com/onsi/ginkgo"
@@ -24,10 +26,28 @@ var _ = Describe("Operation", func() {
 
 	Context("customer functions", func() {
 		It("Test GetCustomers", func() {
-			ca := cs.CreateCustomer("1", "Andy", "Developer", "S", 340, true)
-			cb := cs.CreateCustomer("2", "Peter", "Developer", "S", 618, true)
-			Customers[ca.ID] = *ca
-			Customers[cb.ID] = *cb
+			req, err := http.NewRequest("GET", "/customers", nil)
+			if err != nil {
+				panic(err)
+			}
+			rr := httptest.NewRecorder()
+			handler := http.HandlerFunc(GetCustomers)
+			handler.ServeHTTP(rr, req)
+			if status := rr.Code; status != http.StatusOK {
+				_ = fmt.Errorf("handler returned wrong status code: got %v want %v",
+					status, http.StatusOK)
+			}
+
+			// Check the response body is what we expect.
+			expected := `ewq`
+			if rr.Body.String() != expected {
+				_ = fmt.Errorf("handler returned unexpected body: got %v want %v",
+					rr.Body.String(), expected)
+			}
+
+		})
+
+		It("Test GetCustomer", func() {
 
 		})
 
