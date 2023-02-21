@@ -34,10 +34,7 @@ func GetCustomer(w http.ResponseWriter, r *http.Request) {
 		}
 	} else {
 		w.WriteHeader(http.StatusNotFound)
-		err := json.NewEncoder(w).Encode(Customers)
-		if err != nil {
-			panic(err)
-		}
+		http.Error(w, "Customer not found", http.StatusNotFound)
 	}
 }
 
