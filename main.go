@@ -45,8 +45,10 @@ func (c *Customer) modifyCustomer(ID, Name, Role, Email string, Phone int, Conta
 func main() {
 	ca := cs.CreateCustomer("1", "Andy", "Developer", "S", 320, true)
 	cb := cs.CreateCustomer("2", "Peter", "Developer", "S", 408, true)
+	cc := cs.CreateCustomer("3", "Andy", "Manager", "S", 47, false)
 	op.Customers[ca.ID] = *ca
 	op.Customers[cb.ID] = *cb
+	op.Customers[cc.ID] = *cc
 
 	fileServer := http.FileServer(http.Dir("./static"))
 
