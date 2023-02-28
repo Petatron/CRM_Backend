@@ -81,7 +81,7 @@
 2. Make Customers data private
 3. Upgrade the mock database to a real database (e.g., PostgreSQL).
 4. Deploy the API to the web.
-5. The CRM will be fully modularized and will be able to be used as a library in other projects.
+5. The CRM will be fully modularized and will be able to be used as a library in other future modules.
 
 
 
