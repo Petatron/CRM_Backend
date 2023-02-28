@@ -15,6 +15,15 @@
     - `/customers` - Add a customer
     - `/customers/{id}` - Update a customer
     - `/customers/{id}` - Delete a customer
+3. Example payload for adding a customer:
+   `{
+   "id": "4",
+   "name": "Andy",
+   "role": "Manager",
+   "email": "S",
+   "phone": 47,
+   "contacted": false
+   }`
 
 ### Data
 1. Customer struct with the following fields:
