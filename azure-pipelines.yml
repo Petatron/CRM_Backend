@@ -22,7 +22,7 @@ steps:
 - task: Go@0
   inputs:
     command: 'get'
-    arguments: '-d'
+    arguments: '-v all'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 - task: Go@0
   inputs:
