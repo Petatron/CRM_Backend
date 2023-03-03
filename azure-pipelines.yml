@@ -34,6 +34,10 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
      artifactName: drop
+- task: Go@0
+  inputs:
+    command: 'build'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
 
 - script: |
     go version
