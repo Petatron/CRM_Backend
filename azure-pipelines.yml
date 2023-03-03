@@ -2,12 +2,12 @@
 # Build your Go project.
 # Add steps that test, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/go
-
+# SET UP GO
 trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 variables:
   GOBIN:  '$(GOPATH)/bin' # Go binaries path
@@ -22,8 +22,9 @@ steps:
 - task: Go@0
   inputs:
     command: 'get'
-    arguments: '-v all'
+    arguments: '-d'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
+  # BUILD
 - task: Go@0
   inputs:
     command: 'build'
@@ -59,8 +60,7 @@ steps:
     go build -v .
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
-
-# TEST
+  # TEST
 - task: Go@0
   inputs:
     command: 'test'
