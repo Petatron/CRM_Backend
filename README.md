@@ -82,7 +82,7 @@
 3. Upgrade the mock database to a real database (e.g., PostgreSQL).
 4. Deploy the API to the web.
 5. The CRM will be fully modularized and will be able to be used other future modules.
-6. Create a front-end using React and Django for the CRM.
+6. Create a front-end for the CRM using React.
 
 
 
