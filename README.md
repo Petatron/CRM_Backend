@@ -84,6 +84,8 @@
 5. The CRM will be fully modularized and will be able to be used other future modules.
 6. Create a front-end for the CRM using React.
 
+Release test 1.0.0
+
 
 
 
